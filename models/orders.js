@@ -5,7 +5,7 @@ var placeOrder = require('./../lib/generateOrder');
 var orders = {}
 
 // mongodb URL here
-mongoose.connect();
+mongoose.connect('mongodb://user1:1234@ds063809.mongolab.com:63809/pizzaexpress');
 
 var OrdersSchema = Schema({
   sizes: String,
