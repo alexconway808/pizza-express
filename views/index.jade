@@ -8,6 +8,60 @@ html
     .container
       .order-form
         //- form to POST a new order to the servers '/orders'
+        h1(name="Pizza Orders") Order Your Pizza Here
+        | 1.  Select Your Size
+        br
+        br
+        select(name="Select Size")
+          option(value="Large") Large
+          option(value="Medium") Medium
+          option(value="Small") Small
+        br
+        br
+        p 
+          | 2.  Select Meat Toppings
+        
+        input(type="checkbox", name="meat", value="Pepporoni")
+        | Pepporoni
+        input(type="checkbox", name="meat", value="Ham")
+        | Ham
+        input(type="checkbox", name="meat", value="Beef Topping")
+        | Beef Topping
+        input(type="checkbox", name="meat", value="Italian Sausage")
+        | Italian Sausage
+        input(type="checkbox", name="meat", value="Pork Topping")
+        | Pork Topping
+        input(type="checkbox", name="meat", value="Grilled Chicken")
+        | Grilled Chicken
+        input(type="checkbox", name="meat", value="Bacon")
+        | Bacon
+        br
+        br
+        p
+          | 3.  Select Veggie Toppings
+
+        input(type="checkbox", name="meat", value="Spinach")
+        | Spinach
+        input(type="checkbox", name="meat", value="Green Peppers")
+        | Green Peppers
+        input(type="checkbox", name="meat", value="Red Onions")
+        | Red Onions
+        input(type="checkbox", name="meat", value="Mushrooms")
+        | Mushrooms
+        input(type="checkbox", name="meat", value="Black Olives")
+        | Black Olives
+        input(type="checkbox", name="meat", value="Tomatoes")
+        | Tomatoes
+        input(type="checkbox", name="meat", value="Pineapple")
+        | Pineapple
+        input(type="checkbox", name="meat", value="Jalepenos")
+        | Jalepenos
+        input(type="checkbox", name="meat", value="Garlic")
+        | Garlic
+        br
+        br
+        button(type="button") Submit My Order
+
       .work-header
         h1 Order Queue
       .order-list
