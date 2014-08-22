@@ -27,20 +27,25 @@ orders.getAllPizzaOrders = function(req, res){
 };
 
 orders.createOrder = function(req, res){
-  var newOrder = new Order({
-    size: req.param('sizes'),
-    toppings: {
-      meats: req.param('meats'),
-      veggies: req.param('veggies')
-    }
-  });
+  // console.log(req.body);
+  var newOrder = new Order(req.body);
 
   newOrder.save(function (err){
     if (err) {
-      console.log("error@ createOrder", err);
+      console.log("error @ createOrder", err);
       return err;
     }
     res.json(newOrder);
+  });
+};
+
+orders.deleteOrder = function(orderId, res) {
+  Order.findById(orderId, function (err, order){
+    if (err){
+      console.log("error deleting Order by ID", err);
+      return err;
+    }
+    res.send(200);
   });
 };
 
@@ -50,6 +55,20 @@ orders.generateOrders = function (req, res) {
   var newOrder = new Order(placeOrder.generate());
 
   newOrder.save();
+};
+
+var intervalId;
+
+orders.autoGenerateOrders = function (req, res){
+  intervalId = setInterval(function(){
+    var newOrder = new Order(placeOrder.generate());
+
+    newOrder.save();
+  }, 5000);
+};
+
+orders.killAutoGenerateOrders = function (req, res){
+  clearInterval(intervalId);
 };
 
 module.exports = orders;
