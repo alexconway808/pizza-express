@@ -20,6 +20,22 @@ $.ajax("/orders", {
     console.log(error);
   }
 
+$('#form').submit(function(event){
+  //This prevents the HTML from sending to the server
+  event.preventDefault():
+  $.ajax("/orders", {
+    method: "POST", 
+    data: $('#form').serialize()
+    success: function(data){
+      //do stuff with server response
+    },
+    failure: function(error){
+      //handle error
+    }
+  });
+});
+
+
 });
 
 });

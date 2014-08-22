@@ -8,11 +8,12 @@ html
     .container
       .order-form
         //- form to POST a new order to the servers '/orders'
+      form()  
         h1(name="Pizza Orders") Order Your Pizza Here
         | 1.  Select Your Size
         br
         br
-        select(name="Select Size")
+        select(name="size")
           option(value="Large") Large
           option(value="Medium") Medium
           option(value="Small") Small
@@ -21,42 +22,42 @@ html
         p 
           | 2.  Select Meat Toppings
         
-        input(type="checkbox", name="meat", value="Pepporoni")
+        input(type="checkbox", name="meats[]", value="Pepporoni")
         | Pepporoni
-        input(type="checkbox", name="meat", value="Ham")
+        input(type="checkbox", name="meats[]", value="Ham")
         | Ham
-        input(type="checkbox", name="meat", value="Beef Topping")
+        input(type="checkbox", name="meats[]", value="Beef Topping")
         | Beef Topping
-        input(type="checkbox", name="meat", value="Italian Sausage")
+        input(type="checkbox", name="meats[]", value="Italian Sausage")
         | Italian Sausage
-        input(type="checkbox", name="meat", value="Pork Topping")
+        input(type="checkbox", name="meats[]", value="Pork Topping")
         | Pork Topping
-        input(type="checkbox", name="meat", value="Grilled Chicken")
+        input(type="checkbox", name="meats[]", value="Grilled Chicken")
         | Grilled Chicken
-        input(type="checkbox", name="meat", value="Bacon")
+        input(type="checkbox", name="meats[]", value="Bacon")
         | Bacon
         br
         br
         p
           | 3.  Select Veggie Toppings
 
-        input(type="checkbox", name="meat", value="Spinach")
+        input(type="checkbox", name="veggies[]", value="Spinach")
         | Spinach
-        input(type="checkbox", name="meat", value="Green Peppers")
+        input(type="checkbox", name="veggies[]", value="Green Peppers")
         | Green Peppers
-        input(type="checkbox", name="meat", value="Red Onions")
+        input(type="checkbox", name="veggies[]", value="Red Onions")
         | Red Onions
-        input(type="checkbox", name="meat", value="Mushrooms")
+        input(type="checkbox", name="veggies[]", value="Mushrooms")
         | Mushrooms
-        input(type="checkbox", name="meat", value="Black Olives")
+        input(type="checkbox", name="veggies[]", value="Black Olives")
         | Black Olives
-        input(type="checkbox", name="meat", value="Tomatoes")
+        input(type="checkbox", name="veggies[]", value="Tomatoes")
         | Tomatoes
-        input(type="checkbox", name="meat", value="Pineapple")
+        input(type="checkbox", name="veggies[]", value="Pineapple")
         | Pineapple
-        input(type="checkbox", name="meat", value="Jalepenos")
+        input(type="checkbox", name="veggies[]", value="Jalepenos")
         | Jalepenos
-        input(type="checkbox", name="meat", value="Garlic")
+        input(type="checkbox", name="veggies[]", value="Garlic")
         | Garlic
         br
         br
