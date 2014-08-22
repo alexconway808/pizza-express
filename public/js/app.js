@@ -2,7 +2,16 @@ $(document).ready(function(){
 
   //Define the pizza order function
   function pizzaOrderSubmitted(data){
-    console.log(data);
+      if (data._id){
+        var typeOfVeggies = data.toppings.veggies;
+        var typeOfMeat = data.toppings.meats;
+        var sizeOfPizza = data.size;
+        var pizza = sizeOfPizza + typeOfMeat + typeOfVeggies;
+        $('.order-list').prepend('<li>' + pizza + '</li>'); 
+        return;
+      
+      } else {
+
       for (var i = 0; i < data.length; i += 1){
       //console.log(data[i].toppings);
       var sizeOfPizza = data[i].size;
@@ -10,7 +19,9 @@ $(document).ready(function(){
       var typeOfVeggies = data[i].toppings.veggies;
       var pizza = sizeOfPizza + typeOfMeat + typeOfVeggies;
       //console.log(pizza);
-      $('.order-list').append('<li>' + pizza + '</li>'); 
+      $('.order-list').prepend('<li>' + pizza + '</li>'); 
+      //difference between object and array
+      }
     };
   };
 
@@ -33,7 +44,6 @@ $(document).ready(function(){
       method: "POST", 
       data: $('#form').serialize(),
       success: pizzaOrderSubmitted,
-        //do stuff with server response
       failure: function(error){
         //handle error
       console.log(error);
