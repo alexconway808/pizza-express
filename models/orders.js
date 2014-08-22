@@ -27,7 +27,6 @@ orders.getAllPizzaOrders = function(req, res){
 };
 
 orders.createOrder = function(req, res){
-  // console.log(req.body);
   var newOrder = new Order(req.body);
 
   newOrder.save(function (err){
@@ -68,7 +67,7 @@ orders.autoGenerateOrders = function (req, res){
 };
 
 orders.killAutoGenerateOrders = function (req, res){
-  clearInterval(intervalId);
+  clearInterval(intervalId)
 };
 
 module.exports = orders;
