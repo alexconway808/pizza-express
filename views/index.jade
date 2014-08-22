@@ -8,7 +8,7 @@ html
     .container
       .order-form
         //- form to POST a new order to the servers '/orders'
-      form()  
+      form(id="form")  
         h1(name="Pizza Orders") Order Your Pizza Here
         | 1.  Select Your Size
         br
@@ -22,50 +22,50 @@ html
         p 
           | 2.  Select Meat Toppings
         
-        input(type="checkbox", name="meats[]", value="Pepporoni")
+        input(type="checkbox", name="toppings.meats[]", value="Pepporoni")
         | Pepporoni
-        input(type="checkbox", name="meats[]", value="Ham")
+        input(type="checkbox", name="toppings.meats[]", value="Ham")
         | Ham
-        input(type="checkbox", name="meats[]", value="Beef Topping")
+        input(type="checkbox", name="toppings.meats[]", value="Beef Topping")
         | Beef Topping
-        input(type="checkbox", name="meats[]", value="Italian Sausage")
+        input(type="checkbox", name="toppings.meats[]", value="Italian Sausage")
         | Italian Sausage
-        input(type="checkbox", name="meats[]", value="Pork Topping")
+        input(type="checkbox", name="toppings.meats[]", value="Pork Topping")
         | Pork Topping
-        input(type="checkbox", name="meats[]", value="Grilled Chicken")
+        input(type="checkbox", name="toppings.meats[]", value="Grilled Chicken")
         | Grilled Chicken
-        input(type="checkbox", name="meats[]", value="Bacon")
+        input(type="checkbox", name="toppings.meats[]", value="Bacon")
         | Bacon
         br
         br
         p
           | 3.  Select Veggie Toppings
 
-        input(type="checkbox", name="veggies[]", value="Spinach")
+        input(type="checkbox", name="toppings.veggies[]", value="Spinach")
         | Spinach
-        input(type="checkbox", name="veggies[]", value="Green Peppers")
+        input(type="checkbox", name="toppings.veggies[]", value="Green Peppers")
         | Green Peppers
-        input(type="checkbox", name="veggies[]", value="Red Onions")
+        input(type="checkbox", name="toppings.veggies[]", value="Red Onions")
         | Red Onions
-        input(type="checkbox", name="veggies[]", value="Mushrooms")
+        input(type="checkbox", name="toppings.veggies[]", value="Mushrooms")
         | Mushrooms
-        input(type="checkbox", name="veggies[]", value="Black Olives")
+        input(type="checkbox", name="toppings.veggies[]", value="Black Olives")
         | Black Olives
-        input(type="checkbox", name="veggies[]", value="Tomatoes")
+        input(type="checkbox", name="toppings.veggies[]", value="Tomatoes")
         | Tomatoes
-        input(type="checkbox", name="veggies[]", value="Pineapple")
+        input(type="checkbox", name="toppings.veggies[]", value="Pineapple")
         | Pineapple
-        input(type="checkbox", name="veggies[]", value="Jalepenos")
+        input(type="checkbox", name="toppings.veggies[]", value="Jalepenos")
         | Jalepenos
-        input(type="checkbox", name="veggies[]", value="Garlic")
+        input(type="checkbox", name="toppings.veggies[]", value="Garlic")
         | Garlic
         br
         br
-        button(type="button") Submit My Order
+        input(type="submit", value="Submit My Order")
 
       .work-header
         h1 Order Queue
       .order-list
         //- orders appear
     script.
-      console.log("PIIIIIZZZAAAA");
+      //console.log("PIIIIIZZZAAAA");
